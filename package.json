@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Sitio web del gimnasio Bogota DC Boxing Club",
   "scripts": {
-    "minify:js": "terser index.js -o index.min.js --compress --mangle",
-    "minify:css": "cleancss -o styles.min.css styles.css"
+    "minify:js": "terser Scripts.js -o Scripts.min.js --compress --mangle",
+    "minify:css": "cleancss -o Styles.min.css Styles.css"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
