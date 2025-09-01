@@ -1,10 +1,10 @@
 {
-  "name": "bogota-dc-boxing-club",
+  "name": "My Portfolio",
   "version": "1.0.0",
-  "description": "Sitio web del gimnasio Bogota DC Boxing Club",
+  "description": "Personal portfolio website",
   "scripts": {
-    "minify:js": "terser Scripts.js -o Scripts.min.js --compress --mangle",
-    "minify:css": "cleancss -o Styles.min.css Styles.css"
+    "minify:js": "terser scripts.js -o scripts.min.js --compress --mangle",
+    "minify:css": "cleancss -o styles.min.css styles.css"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
