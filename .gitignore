@@ -184,6 +184,9 @@ dist
 # Serverless Webpack directories
 .webpack/
 
+# Claude AI directories
+.claude/
+
 # Optional stylelint cache
 
 # SvelteKit build / generate output

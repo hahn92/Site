@@ -25,8 +25,8 @@ There are no tests or linters configured.
 
 Single-page portfolio with three source files:
 
-- **`index.html`** — Complete page structure; all sections live here (hero, tech stack, projects, hobbies, contact)
-- **`styles.css`** → compiled to `styles.min.css` — Design system uses CSS custom properties (defined in `:root`). Dark glassmorphism theme with slate palette; primary `#3b82f6`, secondary `#8b5cf6`
+- **`index.html`** — Complete page structure; all sections live here (hero, tech stack, projects, tratectoria, hobbies, contact)
+- **`styles.css`** → compiled to `styles.min.css` — Design system uses CSS custom properties (defined in `:root`). Dark glassmorphism theme with slate palette; 
 - **`scripts.js`** → compiled to `scripts.min.js` — Smooth scroll + Intersection Observer for scroll-triggered fade-up animations
 
 Project images go in `/images/`.

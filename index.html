@@ -1,265 +1,416 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holman Alexander Hernandez Nieto | Desarrollador FullStack</title>
-    <!-- Premium Typography -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Holman Hernandez | FullStack Developer — Rediseño</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.min.css">
+    <style>
+        html, body { margin:0; padding:0; background:#030712; min-height:100%; }
+        body { overflow-x: hidden; }
+        /* Variant switcher — floating pill, bottom-right */
+        .vswitch {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 5px;
+            background: rgba(3, 7, 18, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.7);
+        }
+        .vswitch-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 0.18em;
+            color: rgba(148,163,184,0.7);
+            text-transform: uppercase;
+            padding: 0 10px 0 14px;
+            white-space: nowrap;
+        }
+        .vswitch button {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex; align-items: center; gap: 6px;
+            white-space: nowrap;
+        }
+        .vswitch button:hover { color: #f8fafc; }
+        .vswitch button.active {
+            background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(139,92,246,0.22));
+            color: #f8fafc;
+            box-shadow: inset 0 0 0 1px rgba(139,92,246,0.4);
+        }
+        .vswitch button .vswitch-key {
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        .vswitch button.active .vswitch-key { color: #a78bfa; }
+        @media (max-width: 640px){
+            .vswitch { bottom: 12px; right: 12px; padding: 4px; }
+            .vswitch-label { display: none; }
+            .vswitch button { padding: 7px 10px; font-size: 9px; }
+        }
+    </style>
 </head>
-
 <body>
-    <div class="bg-decor">
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
+
+<div id="stage" data-variant="a">
+
+<div class="variant-scope" data-for-variant="a">
+    <canvas id="va-canvas" class="va-canvas"></canvas>
+    <div class="va-orb-1"></div>
+    <div class="va-orb-2"></div>
+    <div id="va-cursor" class="va-cursor"></div>
+    <div id="va-cursor-ring" class="va-cursor-ring"></div>
+
+    <!-- Side dots nav -->
+    <div class="va-dots">
+        <div class="va-dot active" data-target="inicio" data-label="Inicio"></div>
+        <div class="va-dot" data-target="stack" data-label="Stack"></div>
+        <div class="va-dot" data-target="proyectos" data-label="Proyectos"></div>
+        <div class="va-dot" data-target="experiencia" data-label="Experiencia"></div>
+        <div class="va-dot" data-target="intereses" data-label="Intereses"></div>
+        <div class="va-dot" data-target="contacto" data-label="Contacto"></div>
     </div>
 
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">HAHN<span>.DEV</span></a>
-            <div class="nav-links">
-                <a href="#proyectos">Proyectos</a>
-                <a href="#hobbies">Intereses</a>
-                <a href="#contacto">Contacto</a>
+    <nav class="va-nav">
+        <div class="va-container">
+            <a href="#" class="va-logo">
+                <span class="va-logo-mark">H</span>
+                HAHN<span>.DEV</span>
+            </a>
+            <div class="va-nav-links">
+                <a href="#a-proyectos">Proyectos</a>
+                <a href="#a-experiencia">Experiencia</a>
+                <a href="#a-intereses">Intereses</a>
+                <a href="#a-contacto">Contacto</a>
+            </div>
+            <div class="va-status">
+                <span class="va-status-dot"></span>
+                Disponible · 2026
             </div>
         </div>
     </nav>
 
-    <main class="container">
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <span class="badge">Disponible para nuevos retos</span>
-                <h1>Construyo <span>soluciones digitales</span> de alto impacto.</h1>
-                <h2>Hola, soy Holman Alexander Hernandez N.</h2>
-                <p>Desarrollador FullStack especializado en crear sistemas robustos, escalables y seguros. Integro
-                    inteligencia artificial y tecnologías cloud para llevar las ideas más allá del código.</p>
+    <main class="va-main">
+        <section class="va-hero" data-section="inicio">
+            <div class="va-container">
+                <div class="va-hero-grid">
+                    <div class="va-hero-content">
+                        <div class="va-eyebrow">FullStack Developer · Colombia</div>
+                        <h1 class="va-h1">
+                            Construyo <span class="va-grad">soluciones</span><br>
+                            <span class="va-grad">digitales</span> de alto impacto.
+                        </h1>
+                        <p class="va-hero-sub">Sistemas robustos, escalables y seguros. Integro inteligencia artificial y tecnologías cloud para llevar las ideas más allá del código.</p>
+                        <div class="va-hero-name">› Holman Alexander Hernandez N. <span>// Bogotá, CO</span></div>
+                        <div class="va-cta-group">
+                            <a href="#a-proyectos" class="va-btn va-btn-primary" data-magnetic>
+                                Ver mi trabajo
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="#a-contacto" class="va-btn va-btn-ghost" data-magnetic>Contáctame</a>
+                        </div>
+                    </div>
 
-                <div class="cta-group">
-                    <a href="#proyectos" class="btn btn-primary">
-                        Explorar mi trabajo
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
+                    <aside class="va-hero-side">
+                        <div class="va-stat-card">
+                            <div class="va-stat-label">Años de experiencia</div>
+                            <div class="va-stat-value"><span data-count="10">0</span><small>+</small></div>
+                            <div class="va-stat-desc">Backend, mobile, cloud e IA en producción</div>
+                        </div>
+                        <div class="va-stat-card">
+                            <div class="va-stat-label">Proyectos entregados</div>
+                            <div class="va-stat-value"><span data-count="100">0</span><small>+</small></div>
+                            <div class="va-stat-desc">Web, móvil, sistemas cloud, etc..</div>
+                        </div>
+                    <div class="va-stat-card">
+                        <a href="https://www.linkedin.com/in/holman-alexander-hernandez-nieto/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+                            <div class="va-stat-label">LinkedIn · Perfil completo</div>
+                            <div class="va-stat-value" style="font-size: 22px;">Ver trayectoria ↗</div>
+                            <div class="va-stat-desc">10+ años en backend, mobile, cloud e IA</div>
+                        </a>
+                    </div>
+                    </aside>
+                </div>
+            </div>
+            <div class="va-scroll-hint">
+                <span>Desliza</span>
+                <div class="va-scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Stack -->
+        <section class="va-section va-stack-section" data-section="stack">
+            <div class="va-container">
+                <div class="va-section-head">
+                    <div>
+                        <div class="va-section-num">01 — Toolkit</div>
+                        <h2 class="va-section-title">Stack técnico</h2>
+                    </div>
+                    <div class="va-section-note">Herramientas que uso a diario para construir producto end-to-end.</div>
+                </div>
+                <div class="va-stack">
+                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">Python</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">JavaScript</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">TypeScript</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">Java</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">Go</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Mobile</div><div class="va-stack-name">Kotlin</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Mobile</div><div class="va-stack-name">Swift</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Framework</div><div class="va-stack-name">React</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Framework</div><div class="va-stack-name">Node.js</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Framework</div><div class="va-stack-name">Django</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Cloud</div><div class="va-stack-name">AWS</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Cloud</div><div class="va-stack-name">GCP</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">Cloud</div><div class="va-stack-name">Azure</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">RAG</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">MCP</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">Fine-Tuning</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">Claude</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">Codex</div></div>
+                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">Copilot</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="a-proyectos" class="va-section" data-section="proyectos">
+            <div class="va-container">
+                <div class="va-section-head">
+                    <div>
+                        <div class="va-section-num">02 — Selected Work</div>
+                        <h2 class="va-section-title">Proyectos destacados</h2>
+                    </div>
+                    <div class="va-section-note">Productos reales en producción. Toca cualquier tarjeta para explorar.</div>
+                </div>
+
+                <div class="va-projects">
+                    <!-- Featured -->
+                    <article class="va-proj va-proj-featured">
+                        <div class="va-proj-media">
+                            <span class="va-proj-badge live">En vivo</span>
+                            <img src="images/boxapp.png" alt="BoxApp">
+                        </div>
+                        <div class="va-proj-body">
+                            <div class="va-proj-meta">
+                                <span>Featured · 2024</span>
+                                <span>iOS / Android</span>
+                            </div>
+                            <h3>BoxApp — Entrenamiento de boxeo profesional</h3>
+                            <p>Aplicación móvil construida con React Native. Incluye temporizador avanzado (rounds, preparación, descanso), entrenador de voz (TTS) para combinaciones, perfil del boxeador con gestión de peso y categorías, y seguimiento con gráficas de rendimiento.</p>
+                            <div class="va-proj-tags">
+                                <span>React Native</span><span>Expo</span><span>TTS</span><span>Salud &amp; Fitness</span>
+                            </div>
+                            <div class="va-proj-links">
+                                <a href="https://boxapp.hahndev.com/" target="_blank" class="va-proj-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Web Oficial
+                                </a>
+                                <a href="https://github.com/hahn92/BoxAppWeb" target="_blank" class="va-proj-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="va-proj va-proj-half">
+                        <div class="va-proj-media">
+                            <span class="va-proj-badge">Web</span>
+                            <img src="images/games.png" alt="Games">
+                        </div>
+                        <div class="va-proj-body">
+                            <div class="va-proj-meta"><span>2024</span><span>Frontend</span></div>
+                            <h3>Games — Catálogo interactivo</h3>
+                            <p>Catálogo de videojuegos con interfaz moderna y animaciones atractivas.</p>
+                            <div class="va-proj-tags"><span>JavaScript</span><span>CSS3</span><span>HTML5</span></div>
+                            <div class="va-proj-links">
+                                <a href="https://games.hahndev.com/" target="_blank" class="va-proj-link">Web →</a>
+                                <a href="https://github.com/hahn92/Games" target="_blank" class="va-proj-link">Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="va-proj va-proj-half">
+                        <div class="va-proj-media">
+                            <span class="va-proj-badge">Full-stack</span>
+                            <img src="images/boxin.png" alt="Boxing Club">
+                        </div>
+                        <div class="va-proj-body">
+                            <div class="va-proj-meta"><span>2023</span><span>Club deportivo</span></div>
+                            <h3>Bogotá D.C. Boxing Club</h3>
+                            <p>Plataforma completa para la gestión de un club deportivo, con reservas y galería.</p>
+                            <div class="va-proj-tags"><span>Node.js</span><span>Express</span><span>JS</span></div>
+                            <div class="va-proj-links">
+                                <a href="https://bogotadcboxingclub.hahndev.com/" target="_blank" class="va-proj-link">Web →</a>
+                                <a href="https://github.com/hahn92/bogota_d.c._boxing_club" target="_blank" class="va-proj-link">Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="va-proj va-proj-half">
+                        <div class="va-proj-media">
+                            <span class="va-proj-badge live">En vivo</span>
+                            <img src="images/cv.png" alt="WebCV">
+                        </div>
+                        <div class="va-proj-body">
+                            <div class="va-proj-meta"><span>2024</span><span>SaaS</span></div>
+                            <h3>WebCV — Creador de hojas de vida</h3>
+                            <p>Crea y exporta CVs importando datos de LinkedIn. Vista previa en tiempo real, 8 plantillas y exportación a PDF desde el navegador.</p>
+                            <div class="va-proj-tags"><span>React</span><span>TypeScript</span><span>Tailwind</span></div>
+                            <div class="va-proj-links">
+                                <a href="https://cv.hahndev.com/" target="_blank" class="va-proj-link">Web →</a>
+                                <a href="https://github.com/hahn92/curriculum_vitae_react" target="_blank" class="va-proj-link">Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="va-proj va-proj-half">
+                        <div class="va-proj-media">
+                            <span class="va-proj-badge">CI/CD</span>
+                            <img src="images/seguridad.png" alt="Secure Byte News">
+                        </div>
+                        <div class="va-proj-body">
+                            <div class="va-proj-meta"><span>2024</span><span>Automatización</span></div>
+                            <h3>The Secure Byte News</h3>
+                            <p>Portal automatizado de ciberseguridad con flujos CI/CD y backend en Django.</p>
+                            <div class="va-proj-tags"><span>Python</span><span>Django</span><span>CI/CD</span></div>
+                            <div class="va-proj-links">
+                                <a href="https://thesecurebytenews.hahndev.com" target="_blank" class="va-proj-link">Web →</a>
+                                <a href="https://github.com/hahn92/Ciberseguridad" target="_blank" class="va-proj-link">Repo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiencia -->
+        <section id="a-experiencia" class="va-section" data-section="experiencia">
+            <div class="va-container">
+                <div class="va-section-head">
+                    <div>
+                        <div class="va-section-num">03 — Journey</div>
+                        <h2 class="va-section-title">Trayectoria</h2>
+                    </div>
+                    <div class="va-section-note">De la curiosidad por el código a sistemas en producción escalando con IA.</div>
+                </div>
+                <div class="va-timeline">
+                    <div class="va-tl-item">
+                        <div class="va-tl-year">Mar 2026 — Hoy</div>
+                        <div class="va-tl-title">Software Engineer</div>
+                        <div class="va-tl-place">// Marketplace LatAm · Remoto</div>
+                        <div class="va-tl-desc">Engineering a escala regional. Sistemas distribuidos, performance, y mejores prácticas en uno de los marketplaces más grandes de Latinoamérica.</div>
+                    </div>
+                    <div class="va-tl-item">
+                        <div class="va-tl-year">Jul 2023 — Mar 2026</div>
+                        <div class="va-tl-title">Líder Técnico</div>
+                        <div class="va-tl-place">// Mobile &amp; AI · Remoto</div>
+                        <div class="va-tl-desc">Dirigí el equipo de desarrollo móvil y la arquitectura técnica, optimizando procesos con CI/CD. Implementé estrategias de IA y modelos de clasificación para automatizar la toma de decisiones del negocio.</div>
+                    </div>
+                    <div class="va-tl-item">
+                        <div class="va-tl-year">Jul 2022 — Jun 2023</div>
+                        <div class="va-tl-title">Analista de Desarrollo</div>
+                        <div class="va-tl-place">// Backend &amp; Mobile</div>
+                        <div class="va-tl-desc">Desarrollador backend y de aplicaciones móviles. Diseño de APIs, integraciones y funcionalidades para apps en producción.</div>
+                    </div>
+                    <div class="va-tl-item">
+                        <div class="va-tl-year">May 2022 — Jun 2022</div>
+                        <div class="va-tl-title">Senior Backend Developer</div>
+                        <div class="va-tl-place">// Comercio social</div>
+                        <div class="va-tl-desc">Desarrollo backend con Python/Django para plataforma de comercio social en expansión regional.</div>
+                    </div>
+                    <div class="va-tl-item">
+                        <div class="va-tl-year">Mar 2021 — Abr 2022</div>
+                        <div class="va-tl-title">Backend Developer</div>
+                        <div class="va-tl-place">// Java/Spring · Híbridas</div>
+                        <div class="va-tl-desc">Módulos backend en Java/Spring y desarrollo de aplicaciones híbridas con Angular + Ionic Framework.</div>
+                    </div>
+                    <div class="va-tl-item">
+                        <div class="va-tl-year">Sep 2017 — Feb 2021</div>
+                        <div class="va-tl-title">Backend Developer</div>
+                        <div class="va-tl-place">// Full stack · Cloud · iOS</div>
+                        <div class="va-tl-desc">Planeación de soluciones tecnológicas y configuración cloud en AWS. Módulos del sistema central en Python/Django y Java/Spring. Apps nativas iOS (Swift), híbridas Android (Angular + Ionic) e interfaces web (AngularJS, ReactJS).</div>
+                    </div>
+                    <div class="va-tl-item">
+                        <div class="va-tl-year">Ene 2016 — Dic 2016</div>
+                        <div class="va-tl-title">Desarrollador Web</div>
+                        <div class="va-tl-place">// Freelance · Remoto</div>
+                        <div class="va-tl-desc">Primeros proyectos profesionales como autónomo. Desarrollo web a medida para clientes independientes.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intereses -->
+        <section id="a-intereses" class="va-section" data-section="intereses">
+            <div class="va-container">
+                <div class="va-section-head">
+                    <div>
+                        <div class="va-section-num">04 — Off-code</div>
+                        <h2 class="va-section-title">Más allá del código</h2>
+                    </div>
+                    <div class="va-section-note">Lo que alimenta mi curiosidad cuando el IDE está cerrado.</div>
+                </div>
+                <div class="va-hobbies">
+                    <div class="va-hobby"><div class="va-hobby-num">/ 01</div><div class="va-hobby-title">Boxeo</div><div class="va-hobby-desc">Disciplina y foco que se traducen directamente al código.</div></div>
+                    <div class="va-hobby"><div class="va-hobby-num">/ 02</div><div class="va-hobby-title">Fútbol</div><div class="va-hobby-desc">Lectura de patrones, decisiones rápidas, trabajo en equipo.</div></div>
+                    <div class="va-hobby"><div class="va-hobby-num">/ 03</div><div class="va-hobby-title">Videojuegos</div><div class="va-hobby-desc">Inspiración para UX, animación y mecánicas interactivas.</div></div>
+                    <div class="va-hobby"><div class="va-hobby-num">/ 04</div><div class="va-hobby-title">Libros</div><div class="va-hobby-desc">Técnicos, filosofía de producto, negocio y ciencia.</div></div>
+                    <div class="va-hobby"><div class="va-hobby-num">/ 05</div><div class="va-hobby-title">IA &amp; Tech</div><div class="va-hobby-desc">Experimentando con LLMs, RAG y agentes.</div></div>
+                    <div class="va-hobby"><div class="va-hobby-num">/ 06</div><div class="va-hobby-title">Investigación</div><div class="va-hobby-desc">Ciberseguridad, automatización, arquitectura de sistemas.</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="a-contacto" class="va-contact" data-section="contacto">
+            <div class="va-container">
+                <div class="va-contact-tag">05 — Let's talk</div>
+                <h2>Hablemos de tu <span>próximo</span> proyecto.</h2>
+                <p class="va-contact-desc">¿Tienes un producto en mente o simplemente quieres saludar? Respondo en menos de 24 horas.</p>
+                <div class="va-cta-group" style="justify-content: center;">
+                    <a href="mailto:hahn92@hotmail.com" class="va-btn va-btn-primary" data-magnetic>
+                        hahn92@hotmail.com
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
-            </div>
-
-            <div class="tech-grid">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Kotlin</span>
-                <span class="tech-tag">Swift</span>
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">GCP</span>
-                <span class="tech-tag">IA</span>
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-            </div>
-        </section>
-
-        <section id="proyectos" class="section-padding">
-            <div class="section-title">
-                <h2>Proyectos Destacados</h2>
-                <div class="line"></div>
-            </div>
-
-            <div class="projects-grid">
-                <article class="project-card featured">
-                    <div class="card-image-wrap">
-                        <img src="./images/boxapp.png" alt="BoxApp" class="project-img">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>BoxApp 🥊</h3>
-                        <p>Aplicación de entrenamiento de boxeo profesional construida con React Native. Cuenta con
-                            Temporizador avanzado (Rounds, Preparación, Descanso). Entrenador de voz (TTS) para
-                            combinaciones. Perfil del boxeador (gestión de peso y categorías) y seguimiento con gráficas
-                            de rendimiento.</p>
-                        <div class="project-tags">
-                            <span>React Native</span>
-                            <span>Expo</span>
-                            <span>Salud & Fitness</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://boxapp.hahndev.com/" target="_blank" class="link-btn">🔗 Web Oficial</a>
-                            <a href="https://github.com/hahn92/BoxAppWeb" target="_blank" class="link-btn">📂 GitHub
-                                Web</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-image-wrap">
-                        <img src="./images/games.png" alt="Games" class="project-img">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Games</h3>
-                        <p>Catálogo de videojuegos interactivo con interfaz moderna y animaciones atractivas.</p>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>CSS3</span>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://games.hahndev.com/" target="_blank" class="link-icon"><svg width="20"
-                                    height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg> Web</a>
-                            <a href="https://github.com/hahn92/Games" target="_blank" class="link-icon"><svg width="20"
-                                    height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg> Repositorio</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-image-wrap">
-                        <img src="./images/boxin.png" alt="Boxing Club" class="project-img">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Bogotá D.C. Boxing Club</h3>
-                        <p>Plataforma completa para la gestión de un club deportivo, con reservas y galería.</p>
-                        <div class="project-tags">
-                            <span>Node.js</span>
-                            <span>Express</span>
-                            <span>JS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://bogotadcboxingclub.hahndev.com/" target="_blank" class="link-icon"><svg
-                                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg> Web</a>
-                            <a href="https://github.com/hahn92/bogota_d.c._boxing_club" target="_blank"
-                                class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg> Repositorio</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-image-wrap">
-                        <img src="./images/cv.png" alt="WebCV" class="project-img">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>WebCV</h3>
-                        <p>App para crear y exportar hojas de vida de forma rápida importando datos de LinkedIn. Vista previa en tiempo real, 8 plantillas de diseño y exportación a PDF directamente desde el navegador.</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>Tailwind CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://cv.hahndev.com/" target="_blank" class="link-icon"><svg width="20"
-                                    height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg> Web</a>
-                            <a href="https://github.com/hahn92/curriculum_vitae_react" target="_blank"
-                                class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg> Repositorio</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="card-image-wrap">
-                        <img src="./images/seguridad.png" alt="Secure Byte News" class="project-img">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>The Secure Byte News</h3>
-                        <p>Portal automatizado de ciberseguridad con flujos CI/CD y backend en Django.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Django</span>
-                            <span>CI/CD</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://thesecurebytenews.hahndev.com" target="_blank" class="link-icon"><svg
-                                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg> Web</a>
-                            <a href="https://github.com/hahn92/Ciberseguridad" target="_blank" class="link-icon"><svg
-                                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg> Repositorio</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="hobbies" class="section-padding">
-            <div class="section-title">
-                <h2>Más allá del Código</h2>
-                <div class="line"></div>
-            </div>
-            <div class="hobbies-list">
-                <div class="hobby-item"><span class="hobby-icon">🥊</span><span class="hobby-text">Boxeo</span></div>
-                <div class="hobby-item"><span class="hobby-icon">⚽</span><span class="hobby-text">Fútbol</span></div>
-                <div class="hobby-item"><span class="hobby-icon">🎮</span><span class="hobby-text">Videojuegos</span>
-                </div>
-                <div class="hobby-item"><span class="hobby-icon">📚</span><span class="hobby-text">Libros</span></div>
-                <div class="hobby-item"><span class="hobby-icon">🤖</span><span class="hobby-text">IA & Tech</span>
-                </div>
-                <div class="hobby-item"><span class="hobby-icon">🔬</span><span class="hobby-text">Investigación</span>
+                <div class="va-contact-links" style="margin-top: 40px;">
+                    <a href="https://github.com/hahn92" target="_blank" class="va-proj-link">GitHub ↗</a>
+                    <a href="https://www.linkedin.com/in/holman-alexander-hernandez-nieto/" target="_blank" class="va-proj-link">LinkedIn ↗</a>
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="section-padding">
-            <div class="contact-content">
-                <h2>Contacto</h2>
-                <p>¿Tienes un proyecto en mente o simplemente quieres saludar?</p>
-                <a href="mailto:hahn92@hotmail.com" class="btn btn-primary">Hablemos</a>
-
-                <div class="tech-grid" style="justify-content: center; margin-top: 40px;">
-                    <a href="https://github.com/hahn92" target="_blank" class="tech-tag">GitHub</a>
-                    <a href="https://www.linkedin.com/in/holman-alexander-hernandez-nieto/" target="_blank"
-                        class="tech-tag">LinkedIn</a>
-                </div>
+        <footer class="va-footer">
+            <div class="va-container" style="display:flex; justify-content:space-between; width:100%; gap:20px; flex-wrap:wrap;">
+                <span>© 2026 · Holman Hernandez · Bogotá, CO</span>
+                <span>✦</span>
             </div>
-        </section>
+        </footer>
     </main>
+</div>
+</div>
 
-    <footer>
-        <p>Diseñado y Construido por Holman Hernandez &copy; 2025</p>
-    </footer>
-
-    <script src="scripts.js"></script>
+<script src="scripts.min.js"></script>
 </body>
-
 </html>
