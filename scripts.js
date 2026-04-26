@@ -46,71 +46,77 @@
       }, 2500);
     }
 
-    // Grid canvas with cursor influence
+    // Grid canvas with cursor influence — skip on touch devices
     const canvas = document.getElementById('va-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let W = 0, H = 0;
-    const DPR = Math.min(window.devicePixelRatio || 1, 2);
-    function resize(){
-      W = canvas.width = window.innerWidth * DPR;
-      H = canvas.height = window.innerHeight * DPR;
-      canvas.style.width = window.innerWidth + 'px';
-      canvas.style.height = window.innerHeight + 'px';
-    }
-    resize();
-    window.addEventListener('resize', resize);
+    if (canvas && !isCoarse) {
+      const ctx = canvas.getContext('2d');
+      let W = 0, H = 0;
+      const DPR = Math.min(window.devicePixelRatio || 1, 2);
+      function resize(){
+        W = canvas.width = window.innerWidth * DPR;
+        H = canvas.height = window.innerHeight * DPR;
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+      }
+      resize();
+      window.addEventListener('resize', resize);
 
-    const mouse = { x: -9999, y: -9999 };
-    window.addEventListener('mousemove', e => {
-      mouse.x = e.clientX * DPR;
-      mouse.y = e.clientY * DPR;
-    });
-
-    // Liquid blobs (migrated from variant B)
-    const mouseSoft = { x: W/2, y: H/2, tx: W/2, ty: H/2 };
-    window.addEventListener('mousemove', e => {
-      mouseSoft.tx = e.clientX * DPR;
-      mouseSoft.ty = e.clientY * DPR;
-    });
-    const blobs = [
-      { x: W*0.3, y: H*0.3, r: 280*DPR, vx: 0.6, vy: 0.4, c: [96,165,250], phase: 0 },
-      { x: W*0.7, y: H*0.4, r: 340*DPR, vx: -0.5, vy: 0.7, c: [167,139,250], phase: 2 },
-      { x: W*0.5, y: H*0.7, r: 300*DPR, vx: 0.4, vy: -0.5, c: [139,92,246], phase: 4 },
-      { x: W*0.2, y: H*0.8, r: 260*DPR, vx: 0.7, vy: -0.3, c: [59,130,246], phase: 1 },
-    ];
-    let t = 0;
-    function draw(){
-      mouseSoft.x += (mouseSoft.tx - mouseSoft.x) * 0.06;
-      mouseSoft.y += (mouseSoft.ty - mouseSoft.y) * 0.06;
-      ctx.clearRect(0,0,W,H);
-      ctx.globalCompositeOperation = 'lighter';
-      blobs.forEach(b => {
-        b.x += b.vx + Math.sin(t * 0.5 + b.phase) * 0.3;
-        b.y += b.vy + Math.cos(t * 0.4 + b.phase) * 0.3;
-        const dx = mouseSoft.x - b.x;
-        const dy = mouseSoft.y - b.y;
-        b.x += dx * 0.002;
-        b.y += dy * 0.002;
-        if (b.x < -b.r) b.x = W + b.r;
-        if (b.x > W + b.r) b.x = -b.r;
-        if (b.y < -b.r) b.y = H + b.r;
-        if (b.y > H + b.r) b.y = -b.r;
-        const pulseR = b.r + Math.sin(t + b.phase) * 40 * DPR;
-        const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, pulseR);
-        g.addColorStop(0, `rgba(${b.c[0]},${b.c[1]},${b.c[2]},0.32)`);
-        g.addColorStop(0.5, `rgba(${b.c[0]},${b.c[1]},${b.c[2]},0.07)`);
-        g.addColorStop(1, `rgba(${b.c[0]},${b.c[1]},${b.c[2]},0)`);
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(b.x, b.y, pulseR, 0, Math.PI*2);
-        ctx.fill();
+      const mouse = { x: -9999, y: -9999 };
+      window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX * DPR;
+        mouse.y = e.clientY * DPR;
       });
-      ctx.globalCompositeOperation = 'source-over';
-      t += 0.01;
-      requestAnimationFrame(draw);
+
+      const mouseSoft = { x: W/2, y: H/2, tx: W/2, ty: H/2 };
+      window.addEventListener('mousemove', e => {
+        mouseSoft.tx = e.clientX * DPR;
+        mouseSoft.ty = e.clientY * DPR;
+      });
+      const blobs = [
+        { x: W*0.3, y: H*0.3, r: 280*DPR, vx: 0.6, vy: 0.4, c: [96,165,250], phase: 0 },
+        { x: W*0.7, y: H*0.4, r: 340*DPR, vx: -0.5, vy: 0.7, c: [167,139,250], phase: 2 },
+        { x: W*0.5, y: H*0.7, r: 300*DPR, vx: 0.4, vy: -0.5, c: [139,92,246], phase: 4 },
+        { x: W*0.2, y: H*0.8, r: 260*DPR, vx: 0.7, vy: -0.3, c: [59,130,246], phase: 1 },
+      ];
+      let t = 0, animId;
+      function draw(){
+        mouseSoft.x += (mouseSoft.tx - mouseSoft.x) * 0.06;
+        mouseSoft.y += (mouseSoft.ty - mouseSoft.y) * 0.06;
+        ctx.clearRect(0,0,W,H);
+        ctx.globalCompositeOperation = 'lighter';
+        blobs.forEach(b => {
+          b.x += b.vx + Math.sin(t * 0.5 + b.phase) * 0.3;
+          b.y += b.vy + Math.cos(t * 0.4 + b.phase) * 0.3;
+          const dx = mouseSoft.x - b.x;
+          const dy = mouseSoft.y - b.y;
+          b.x += dx * 0.002;
+          b.y += dy * 0.002;
+          if (b.x < -b.r) b.x = W + b.r;
+          if (b.x > W + b.r) b.x = -b.r;
+          if (b.y < -b.r) b.y = H + b.r;
+          if (b.y > H + b.r) b.y = -b.r;
+          const pulseR = b.r + Math.sin(t + b.phase) * 40 * DPR;
+          const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, pulseR);
+          g.addColorStop(0, `rgba(${b.c[0]},${b.c[1]},${b.c[2]},0.32)`);
+          g.addColorStop(0.5, `rgba(${b.c[0]},${b.c[1]},${b.c[2]},0.07)`);
+          g.addColorStop(1, `rgba(${b.c[0]},${b.c[1]},${b.c[2]},0)`);
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, pulseR, 0, Math.PI*2);
+          ctx.fill();
+        });
+        ctx.globalCompositeOperation = 'source-over';
+        t += 0.01;
+        animId = requestAnimationFrame(draw);
+      }
+      animId = requestAnimationFrame(draw);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) { cancelAnimationFrame(animId); animId = null; }
+        else if (!animId) { animId = requestAnimationFrame(draw); }
+      });
+    } else if (canvas) {
+      canvas.style.display = 'none';
     }
-    draw();
 
     // Custom cursor
     const cur = document.getElementById('va-cursor');

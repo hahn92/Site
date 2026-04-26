@@ -944,6 +944,13 @@
     [data-variant="a"] .va-cursor,
     [data-variant="a"] .va-cursor-ring { display: none; }
     [data-variant="a"] * { cursor: auto !important; }
+    [data-variant="a"] .va-orb-1,
+    [data-variant="a"] .va-orb-2 { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    [data-variant="a"] .va-orb-1,
+    [data-variant="a"] .va-orb-2 { display: none; }
+    [data-variant="a"] * { animation: none !important; transition: none !important; }
 }
 
 /* Hide default cursor on desktop when custom is active */
