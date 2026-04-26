@@ -208,24 +208,25 @@
     document.querySelectorAll('[data-variant="a"] [data-count]').forEach(el => {
       const target = +el.dataset.count;
       let started = false;
+      function runCount() {
+        if (started) return;
+        started = true;
+        const t0 = performance.now();
+        const dur = 1400;
+        function step(now){
+          const p = Math.min(1, (now - t0) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased).toString();
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
       const io = new IntersectionObserver(es => {
-        es.forEach(e => {
-          if (e.isIntersecting && !started){
-            started = true;
-            let start = 0;
-            const t0 = performance.now();
-            const dur = 1400;
-            function step(now){
-              const p = Math.min(1, (now - t0) / dur);
-              const eased = 1 - Math.pow(1 - p, 3);
-              el.textContent = Math.round(target * eased).toString();
-              if (p < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-          }
-        });
-      }, {threshold: 0.4});
+        if (es[0].isIntersecting) runCount();
+      }, { threshold: 0.1 });
       io.observe(el);
+      // Safari iOS fallback: IO may not fire for elements already in viewport
+      setTimeout(runCount, 1000);
     });
   }
 
