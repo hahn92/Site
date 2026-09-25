@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos — Holman Hernandez | FullStack Developer</title>
+    <meta name="description" content="Apps, juegos y herramientas web de Holman Hernandez: BoxApp, Mazing Tower Defense, Plataformer, FormatConverter y más.">
+    <link rel="canonical" href="https://site.hahndev.com/projects.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" onload="this.rel='stylesheet'">
@@ -72,185 +74,233 @@
         <section class="va-section" style="padding-top: 130px;">
             <div class="va-container">
                 <a href="index.html" class="proj-back">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
                     Volver al inicio
                 </a>
                 <div class="va-section-head">
                     <div>
-                        <div class="va-section-num">Selected Work</div>
+                        <div class="va-section-num">Selected Work · 10 proyectos</div>
                         <h2 class="va-section-title">Todos los proyectos</h2>
                     </div>
-                    <div class="va-section-note">Productos reales en producción. Toca cualquier tarjeta para explorar.</div>
+                    <div class="va-section-note">Productos reales en producción: apps, juegos y herramientas. Toca cualquier tarjeta para explorar.</div>
                 </div>
 
-                <div class="va-projects">
+                <nav class="va-proj-jump" aria-label="Categorías de proyectos">
+                    <a href="#apps">Apps &amp; sitios <span>3</span></a>
+                    <a href="#juegos">Juegos <span>3</span></a>
+                    <a href="#herramientas">Herramientas <span>4</span></a>
+                </nav>
 
-                    <!-- BoxApp — Featured -->
-                    <article class="va-proj va-proj-featured">
-                        <div class="va-proj-media">
-                            <span class="va-proj-badge live">En vivo</span>
-                            <picture>
-                                <source srcset="images/boxapp.png" type="image/png">
-                                <img src="images/boxapp.png" alt="BoxApp" loading="eager" fetchpriority="high" width="900" height="724">
-                            </picture>
-                        </div>
-                        <div class="va-proj-body">
-                            <div class="va-proj-meta">
-                                <span>Featured · 2024</span>
-                                <span>iOS / Android</span>
-                            </div>
-                            <h3>BoxApp — Entrenamiento de boxeo profesional</h3>
-                            <p>Aplicación móvil construida con React Native. Incluye temporizador avanzado (rounds, preparación, descanso), entrenador de voz (TTS) para combinaciones, perfil del boxeador con gestión de peso y categorías, y seguimiento con gráficas de rendimiento.</p>
-                            <div class="va-proj-tags">
-                                <span>React Native</span><span>Expo</span><span>TTS</span><span>Salud &amp; Fitness</span>
-                            </div>
-                            <div class="va-proj-links">
-                                <a href="https://boxapp.hahndev.com/" target="_blank" class="va-proj-link">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                    Web Oficial
-                                </a>
-                                <a href="https://github.com/hahn92/BoxAppWeb" target="_blank" class="va-proj-link">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </article>
+                <!-- ===== Apps & sitios ===== -->
+                <div id="apps" class="va-proj-group">
+                    <h3 class="va-proj-group-title"><span>01</span> Apps &amp; sitios</h3>
+                    <div class="va-projects">
 
-                    <!-- Games -->
-                    <article class="va-proj va-proj-half">
-                        <div class="va-proj-media">
-                            <span class="va-proj-badge">Web</span>
-                            <picture>
-                                <source srcset="images/games.png" type="image/png">
-                                <img src="images/games.png" alt="Games" loading="lazy" width="1200" height="652">
-                            </picture>
-                        </div>
-                        <div class="va-proj-body">
-                            <div class="va-proj-meta"><span>2024</span><span>Frontend</span></div>
-                            <h3>Games — Catálogo interactivo</h3>
-                            <p>Catálogo de videojuegos con interfaz moderna y animaciones atractivas.</p>
-                            <div class="va-proj-tags"><span>JavaScript</span><span>CSS3</span><span>HTML5</span></div>
-                            <div class="va-proj-links">
-                                <a href="https://games.hahndev.com/" target="_blank" class="va-proj-link">Web →</a>
-                                <a href="https://github.com/hahn92/Games" target="_blank" class="va-proj-link">Repo</a>
+                        <!-- BoxApp — Featured -->
+                        <article class="va-proj va-proj-featured">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge live">En vivo</span>
+                                <img src="images/boxapp.webp" alt="Portada de BoxApp: tu coach de boxeo en el bolsillo" loading="eager" fetchpriority="high" width="1280" height="800">
                             </div>
-                        </div>
-                    </article>
-
-                    <!-- Boxing Club -->
-                    <article class="va-proj va-proj-half">
-                        <div class="va-proj-media">
-                            <span class="va-proj-badge">Full-stack</span>
-                            <picture>
-                                <source srcset="images/boxin.png" type="image/png">
-                                <img src="images/boxin.png" alt="Boxing Club" loading="lazy" width="1200" height="661">
-                            </picture>
-                        </div>
-                        <div class="va-proj-body">
-                            <div class="va-proj-meta"><span>2023</span><span>Club deportivo</span></div>
-                            <h3>Bogotá D.C. Boxing Club</h3>
-                            <p>Plataforma completa para la gestión de un club deportivo, con reservas y galería.</p>
-                            <div class="va-proj-tags"><span>Node.js</span><span>Express</span><span>JS</span></div>
-                            <div class="va-proj-links">
-                                <a href="https://bogotadcboxingclub.hahndev.com/" target="_blank" class="va-proj-link">Web →</a>
-                                <a href="https://github.com/hahn92/bogota_d.c._boxing_club" target="_blank" class="va-proj-link">Repo</a>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta">
+                                    <span>Featured · 2024</span>
+                                    <span>iOS / Android</span>
+                                </div>
+                                <h3>BoxApp — Entrenamiento de boxeo profesional</h3>
+                                <p>App móvil en React Native: cronómetro de rounds con preparación y descanso, entrenador de voz (TTS) que canta combinaciones, tarjeta de peleador con peso y categoría, y gráficas de progreso. Gratis, sin registros y con los datos solo en tu dispositivo.</p>
+                                <div class="va-proj-tags">
+                                    <span>React Native</span><span>Expo</span><span>TTS</span><span>Salud &amp; Fitness</span>
+                                </div>
+                                <div class="va-proj-links">
+                                    <a href="https://boxapp.hahndev.com/" target="_blank" rel="noopener" class="va-proj-link">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                        Web Oficial
+                                    </a>
+                                    <a href="https://github.com/hahn92/BoxAppWeb" target="_blank" rel="noopener" class="va-proj-link">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                        GitHub
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- WebCV -->
-                    <article class="va-proj va-proj-half">
-                        <div class="va-proj-media">
-                            <span class="va-proj-badge live">En vivo</span>
-                            <picture>
-                                <source srcset="images/cv.avif" type="image/avif">
-                                <img src="images/cv.jpg" alt="WebCV" loading="lazy" width="900" height="829">
-                            </picture>
-                        </div>
-                        <div class="va-proj-body">
-                            <div class="va-proj-meta"><span>2024</span><span>SaaS</span></div>
-                            <h3>WebCV — Creador de hojas de vida</h3>
-                            <p>Crea y exporta CVs importando datos de LinkedIn. Vista previa en tiempo real, 8 plantillas y exportación a PDF desde el navegador.</p>
-                            <div class="va-proj-tags"><span>React</span><span>TypeScript</span><span>Tailwind</span></div>
-                            <div class="va-proj-links">
-                                <a href="https://cv.hahndev.com/" target="_blank" class="va-proj-link">Web →</a>
-                                <a href="https://github.com/hahn92/curriculum_vitae_react" target="_blank" class="va-proj-link">Repo</a>
+                        <!-- Boxing Club -->
+                        <article class="va-proj va-proj-half">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge">Full-stack</span>
+                                <img src="images/boxin.webp" alt="Portada de Bogotá D.C. Boxing Club" loading="lazy" width="1280" height="800">
                             </div>
-                        </div>
-                    </article>
-
-                    <!-- Secure Byte News -->
-                    <article class="va-proj va-proj-half">
-                        <div class="va-proj-media">
-                            <span class="va-proj-badge">CI/CD</span>
-                            <picture>
-                                <source srcset="images/seguridad.png" type="image/png">
-                                <img src="images/seguridad.png" alt="Secure Byte News" loading="lazy" width="1200" height="661">
-                            </picture>
-                        </div>
-                        <div class="va-proj-body">
-                            <div class="va-proj-meta"><span>2024</span><span>Automatización</span></div>
-                            <h3>The Secure Byte News</h3>
-                            <p>Portal automatizado de ciberseguridad con flujos CI/CD y backend en Django.</p>
-                            <div class="va-proj-tags"><span>Python</span><span>Django</span><span>CI/CD</span></div>
-                            <div class="va-proj-links">
-                                <a href="https://thesecurebytenews.hahndev.com" target="_blank" class="va-proj-link">Web →</a>
-                                <a href="https://github.com/hahn92/Ciberseguridad" target="_blank" class="va-proj-link">Repo</a>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2023</span><span>Club deportivo</span></div>
+                                <h3>Bogotá D.C. Boxing Club</h3>
+                                <p>Plataforma para la gestión de un club de boxeo: clases por nivel y edad, reservas, galería, redes sociales y contacto directo por WhatsApp.</p>
+                                <div class="va-proj-tags"><span>Node.js</span><span>Express</span><span>JavaScript</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://bogotadcboxingclub.hahndev.com/" target="_blank" rel="noopener" class="va-proj-link">Web →</a>
+                                    <a href="https://github.com/hahn92/bogota_d.c._boxing_club" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Image Metadata -->
-                    <article class="va-proj va-proj-half">
-                        <div class="va-proj-media">
-                            <span class="va-proj-badge live">En vivo</span>
-                            <picture>
-                                <source srcset="images/imagemetadata.png" type="image/png">
-                                <img src="images/imagemetadata.png" alt="Lector de Metadatos de Imágenes" loading="lazy" width="2538" height="1174">
-                            </picture>
-                        </div>
-                        <div class="va-proj-body">
-                            <div class="va-proj-meta"><span>2026</span><span>Privacy-first</span></div>
-                            <h3>Image Metadata — Lector de metadatos</h3>
-                            <p>Herramienta web que extrae y muestra los metadatos EXIF de cualquier imagen (JPG, PNG, TIFF, HEIC, WEBP, GIF). Procesado 100% local en el navegador, sin subir archivos a ningún servidor. Exportación a JSON.</p>
-                            <div class="va-proj-tags"><span>JavaScript</span><span>EXIF</span><span>HTML5</span><span>CSS3</span></div>
-                            <div class="va-proj-links">
-                                <a href="https://imagemetadata.hahndev.com" target="_blank" class="va-proj-link">Web →</a>
-                                <a href="https://github.com/hahn92/Images" target="_blank" class="va-proj-link">Repo</a>
+                        <!-- Secure Byte News -->
+                        <article class="va-proj va-proj-half">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge">CI/CD</span>
+                                <img src="images/seguridad.png" alt="Edición diaria de The Secure Byte News" loading="lazy" width="1024" height="553">
                             </div>
-                        </div>
-                    </article>
-
-                    <!-- FormatConverter -->
-                    <article class="va-proj va-proj-half">
-                        <div class="va-proj-media">
-                            <span class="va-proj-badge live">En vivo</span>
-                            <picture>
-                                <source srcset="images/formatconverter.png" type="image/png">
-                                <img src="images/formatconverter.png" alt="Convertidor de Formatos de Imagen" loading="lazy" width="2682" height="1482">
-                            </picture>
-                        </div>
-                        <div class="va-proj-body">
-                            <div class="va-proj-meta"><span>2026</span><span>Zero dependencies</span></div>
-                            <h3>FormatConverter — Conversor a Next-Gen</h3>
-                            <p>SPA para la conversión masiva de imágenes (JPG/PNG) a formatos Next-Gen (WebP/AVIF). Construida con HTML5, CSS3 y JavaScript puros, sin librerías ni frameworks. Procesamiento 100% local en el navegador: las imágenes nunca salen del dispositivo.</p>
-                            <div class="va-proj-tags"><span>JavaScript</span><span>WebP</span><span>AVIF</span><span>HTML5</span></div>
-                            <div class="va-proj-links">
-                                <a href="https://formatconverter.hahndev.com/" target="_blank" class="va-proj-link">Web →</a>
-                                <a href="https://github.com/hahn92/convertidor-formatos" target="_blank" class="va-proj-link">Repo</a>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2024</span><span>Automatización</span></div>
+                                <h3>The Secure Byte News</h3>
+                                <p>Boletín diario de ciberinteligencia generado automáticamente: agrega noticias de varias fuentes, las publica por edición y permite filtrarlas por fuente y fecha. Pipeline CI/CD con backend en Django.</p>
+                                <div class="va-proj-tags"><span>Python</span><span>Django</span><span>CI/CD</span><span>OSINT</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://thesecurebytenews.hahndev.com" target="_blank" rel="noopener" class="va-proj-link">Web →</a>
+                                    <a href="https://github.com/hahn92/Ciberseguridad" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-
+                        </article>
+                    </div>
                 </div>
 
-                <div style="display:flex; justify-content:center; gap:12px; margin-top: 56px; flex-wrap: wrap;">
-                    <span class="va-btn va-btn-primary" data-magnetic style="opacity:1; cursor:default;">1</span>
-                    <a href="projects2.html" class="va-btn va-btn-ghost" data-magnetic>
-                        2
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
+                <!-- ===== Juegos ===== -->
+                <div id="juegos" class="va-proj-group">
+                    <h3 class="va-proj-group-title"><span>02</span> Juegos</h3>
+                    <div class="va-projects">
+
+                        <!-- Mazing — Tower Defense -->
+                        <article class="va-proj va-proj-third">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge live">Jugable</span>
+                                <img src="images/towerdefender.webp" alt="Partida de Mazing: enemigos avanzando hacia el castillo entre torres" loading="lazy" width="1280" height="800">
+                            </div>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2026</span><span>Juego 3D</span></div>
+                                <h3>Mazing — Tower Defense 3D</h3>
+                                <p>Construye un laberinto de torres y resiste 20 oleadas de 12 tipos de enemigos con resistencias elementales. Descubre inventos (Arquería, Pólvora, Criogenia…) que desbloquean armas nuevas. 4 mapas, 4 dificultades, clima dinámico y modo infinito.</p>
+                                <div class="va-proj-tags"><span>Babylon.js</span><span>WebGL</span><span>JavaScript</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://towerdefender.hahndev.com" target="_blank" rel="noopener" class="va-proj-link">Jugar →</a>
+                                    <a href="https://github.com/hahn92/towe-defender" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Plataformer -->
+                        <article class="va-proj va-proj-third">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge live">Jugable</span>
+                                <img src="images/platformer.webp" alt="Primer nivel de Plataformer: Pradera Soleada" loading="lazy" width="1280" height="800">
+                            </div>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2026</span><span>Plataformas</span></div>
+                                <h3>Plataformer — Aventura multiclima</h3>
+                                <p>12 mundos donde el clima cambia la jugabilidad: sol que quema, viento, hielo, rayos y cuevas a oscuras. Poderes ocultos, personajes desbloqueables, modo infinito procedural, reto diario y editor de niveles que se comparte por URL. Soporta mando y táctil.</p>
+                                <div class="va-proj-tags"><span>Babylon.js</span><span>Procedural</span><span>Gamepad</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://platformer.hahndev.com" target="_blank" rel="noopener" class="va-proj-link">Jugar →</a>
+                                    <a href="https://github.com/hahn92/Platformer" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Games -->
+                        <article class="va-proj va-proj-third">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge">80 juegos</span>
+                                <img src="images/games.webp" alt="Catálogo de juegos: Snake, Tetris, Pong, Breakout, 2048 y más" loading="lazy" width="1280" height="800">
+                            </div>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2024</span><span>Frontend</span></div>
+                                <h3>Games — Catálogo de 80 juegos</h3>
+                                <p>80 juegos clásicos hechos con JavaScript y CSS (Snake, Tetris, Pong, 2048, Space Invaders…) con buscador, filtros por 17 categorías y opción de guardarlos todos para jugar sin conexión.</p>
+                                <div class="va-proj-tags"><span>JavaScript</span><span>CSS3</span><span>Offline</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://games.hahndev.com/" target="_blank" rel="noopener" class="va-proj-link">Jugar →</a>
+                                    <a href="https://github.com/hahn92/Games" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- ===== Herramientas ===== -->
+                <div id="herramientas" class="va-proj-group">
+                    <h3 class="va-proj-group-title"><span>03</span> Herramientas <em>· 100% en el navegador, tus archivos no salen del dispositivo</em></h3>
+                    <div class="va-projects">
+
+                        <!-- WebCV -->
+                        <article class="va-proj va-proj-half">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge live">En vivo</span>
+                                <img src="images/cv.webp" alt="WebCV: genera tu CV desde la exportación de LinkedIn" loading="lazy" width="1280" height="800">
+                            </div>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2024</span><span>Productividad</span></div>
+                                <h3>WebCV — Creador de hojas de vida</h3>
+                                <p>Importa tu perfil de LinkedIn (PDF o exportación CSV) y rellena el CV automáticamente. Vista previa en tiempo real, 8 plantillas y exportación a PDF. Gratis, sin APIs externas.</p>
+                                <div class="va-proj-tags"><span>React</span><span>TypeScript</span><span>Tailwind</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://cv.hahndev.com/" target="_blank" rel="noopener" class="va-proj-link">Web →</a>
+                                    <a href="https://github.com/hahn92/curriculum_vitae_react" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Image Metadata -->
+                        <article class="va-proj va-proj-half">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge live">En vivo</span>
+                                <img src="images/imagemetadata.webp" alt="Informe de metadatos de una foto con aviso de coordenadas GPS" loading="lazy" width="1280" height="800">
+                            </div>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2026</span><span>Privacy-first</span></div>
+                                <h3>Image Metadata — Lector de metadatos</h3>
+                                <p>Extrae los metadatos EXIF de JPG, PNG, TIFF, HEIC, WEBP y GIF: cámara, exposición, GPS, hashes SHA-256 y formato real por magic bytes. Avisa cuando la imagen expone datos personales como ubicación o autoría. Exporta a JSON.</p>
+                                <div class="va-proj-tags"><span>JavaScript</span><span>EXIF</span><span>Privacidad</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://imagemetadata.hahndev.com" target="_blank" rel="noopener" class="va-proj-link">Web →</a>
+                                    <a href="https://github.com/hahn92/Images" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- FormatConverter -->
+                        <article class="va-proj va-proj-half">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge live">En vivo</span>
+                                <img src="images/formatconverter.webp" alt="Conversión por lotes de imágenes a WebP con el ahorro de peso de cada una" loading="lazy" width="1280" height="800">
+                            </div>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2026</span><span>Zero dependencies</span></div>
+                                <h3>FormatConverter — Conversor de imágenes</h3>
+                                <p>Conversión por lotes entre JPG, PNG, WebP, AVIF y BMP (acepta también GIF, TIFF, ICO, SVG y HEIC), con control de calidad y fondo para transparencias. Procesa en un Web Worker con OffscreenCanvas y guarda con File System Access API. Vanilla JS, sin librerías.</p>
+                                <div class="va-proj-tags"><span>JavaScript</span><span>Web Workers</span><span>WebP</span><span>AVIF</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://formatconverter.hahndev.com/" target="_blank" rel="noopener" class="va-proj-link">Web →</a>
+                                    <a href="https://github.com/hahn92/convertidor-formatos" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Favicon Generator -->
+                        <article class="va-proj va-proj-half">
+                            <div class="va-proj-media">
+                                <span class="va-proj-badge live">En vivo</span>
+                                <img src="images/favicongenerator.webp" alt="Vista previa de los favicons generados en todos los tamaños" loading="lazy" width="1280" height="800">
+                            </div>
+                            <div class="va-proj-body">
+                                <div class="va-proj-meta"><span>2026</span><span>Zero dependencies</span></div>
+                                <h3>Favicon Generator — Assets PWA &amp; móvil</h3>
+                                <p>Genera el set completo de favicons y assets para web, PWA, iOS y Android (16 a 512 px) desde una imagen maestra. Construye archivos .ico nativos con ArrayBuffer/DataView, emite el site.webmanifest y el snippet HTML listo para pegar.</p>
+                                <div class="va-proj-tags"><span>JavaScript</span><span>Canvas API</span><span>PWA</span></div>
+                                <div class="va-proj-links">
+                                    <a href="https://favicongenerator.hahndev.com/" target="_blank" rel="noopener" class="va-proj-link">Web →</a>
+                                    <a href="https://github.com/hahn92/favicon-generator" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
