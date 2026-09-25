@@ -12,7 +12,7 @@
     --bg-panel: #0b1220;
     --text-main: #94a3b8;
     --text-bright: #f8fafc;
-    --text-dim: #475569;
+    --text-dim: #7c8aa0;
     --border: rgba(148, 163, 184, 0.12);
     --border-strong: rgba(148, 163, 184, 0.22);
     --glass: rgba(15, 23, 42, 0.55);
@@ -868,6 +868,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: 'Fraunces', Georgia, serif;
     font-style: italic;
     font-weight: 400;
     padding-right: 0.08em;

@@ -3,84 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holman Hernandez | FullStack Developer — Rediseño</title>
-    <link rel="preload" as="image" href="images/boxapp.avif" type="image/avif" fetchpriority="high">
+    <title>Holman Hernandez | FullStack Developer</title>
+    <meta name="description" content="Portfolio de Holman Hernandez, FullStack Developer en Bogotá con más de 10 años de experiencia en backend, mobile, cloud e inteligencia artificial.">
+    <meta name="author" content="Holman Hernandez">
+    <link rel="canonical" href="https://site.hahndev.com/">
+    <meta name="theme-color" content="#030712">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:url" content="https://site.hahndev.com/">
+    <meta property="og:title" content="Holman Hernandez | FullStack Developer">
+    <meta property="og:description" content="Sistemas robustos, escalables y seguros. Backend, mobile, cloud e IA en producción.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Holman Hernandez | FullStack Developer">
+    <meta name="twitter:description" content="Sistemas robustos, escalables y seguros. Backend, mobile, cloud e IA en producción.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap"></noscript>
     <link rel="stylesheet" href="styles.min.css">
     <style>
         html, body { margin:0; padding:0; background:#030712; min-height:100%; }
         body { overflow-x: hidden; }
-        /* Variant switcher — floating pill, bottom-right */
-        .vswitch {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 200;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            padding: 5px;
-            background: rgba(3, 7, 18, 0.82);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 100px;
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.7);
-        }
-        .vswitch-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 9px;
-            letter-spacing: 0.18em;
-            color: rgba(148,163,184,0.7);
-            text-transform: uppercase;
-            padding: 0 10px 0 14px;
-            white-space: nowrap;
-        }
-        .vswitch button {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 8px 14px;
-            background: transparent;
-            border: none;
-            color: #94a3b8;
-            border-radius: 100px;
-            cursor: pointer;
-            transition: all 0.25s;
-            display: flex; align-items: center; gap: 6px;
-            white-space: nowrap;
-        }
-        .vswitch button:hover { color: #f8fafc; }
-        .vswitch button.active {
-            background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(139,92,246,0.22));
-            color: #f8fafc;
-            box-shadow: inset 0 0 0 1px rgba(139,92,246,0.4);
-        }
-        .vswitch button .vswitch-key {
-            font-weight: 700;
-            color: #3b82f6;
-        }
-        .vswitch button.active .vswitch-key { color: #a78bfa; }
-        @media (max-width: 640px){
-            .vswitch { bottom: 12px; right: 12px; padding: 4px; }
-            .vswitch-label { display: none; }
-            .vswitch button { padding: 7px 10px; font-size: 9px; }
-        }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-32CT9Z3KVL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-32CT9Z3KVL');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-32CT9Z3KVL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-32CT9Z3KVL');
-</script>
 <body>
 
 <div id="stage" data-variant="a">
@@ -145,12 +100,12 @@
                     <aside class="va-hero-side">
                         <div class="va-stat-card">
                             <div class="va-stat-label">Años de experiencia</div>
-                            <div class="va-stat-value"><span data-count="10">0</span><small>+</small></div>
+                            <div class="va-stat-value"><span data-count="10">10</span><small>+</small></div>
                             <div class="va-stat-desc">Backend, mobile, cloud e IA en producción</div>
                         </div>
                         <div class="va-stat-card">
                             <div class="va-stat-label">Proyectos entregados</div>
-                            <div class="va-stat-value"><span data-count="100">0</span><small>+</small></div>
+                            <div class="va-stat-value"><span data-count="100">100</span><small>+</small></div>
                             <div class="va-stat-desc">Web, móvil, sistemas cloud, etc..</div>
                         </div>
                     <div class="va-stat-card">
@@ -220,8 +175,7 @@
                         <div class="va-proj-media">
                             <span class="va-proj-badge live">En vivo</span>
                             <picture>
-                                <source srcset="images/boxapp.png" type="image/png">
-                                <img src="images/boxapp.jpg" alt="BoxApp" loading="eager" fetchpriority="high" width="900" height="724">
+                                <img src="images/boxapp.png" alt="BoxApp" loading="eager" fetchpriority="high" width="1024" height="561">
                             </picture>
                         </div>
                         <div class="va-proj-body">
