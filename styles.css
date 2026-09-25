@@ -37,55 +37,21 @@
 [data-variant="a"] .va-orb-2 {
     position: fixed;
     border-radius: 50%;
-    filter: blur(140px);
     pointer-events: none;
     z-index: 0;
     will-change: transform;
 }
 [data-variant="a"] .va-orb-1 {
     top: -10%; right: -5%;
-    width: 520px; height: 520px;
-    background: rgba(139, 92, 246, 0.28);
+    width: 820px; height: 820px;
+    margin: -150px -150px 0 0;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, rgba(139, 92, 246, 0.12) 35%, transparent 65%);
 }
 [data-variant="a"] .va-orb-2 {
     bottom: -15%; left: -10%;
-    width: 640px; height: 640px;
-    background: rgba(59, 130, 246, 0.22);
-}
-
-/* Custom cursor */
-[data-variant="a"] .va-cursor {
-    position: fixed;
-    top: 0; left: 0;
-    width: 8px; height: 8px;
-    background: var(--primary);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s;
-    mix-blend-mode: screen;
-}
-[data-variant="a"] .va-cursor-ring {
-    position: fixed;
-    top: 0; left: 0;
-    width: 36px; height: 36px;
-    border: 1px solid var(--primary);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.2s, background 0.2s;
-}
-[data-variant="a"] .va-cursor-ring.hover {
-    width: 64px; height: 64px;
-    background: rgba(59, 130, 246, 0.08);
-    border-color: var(--secondary);
-}
-[data-variant="a"] .va-cursor-ring.click {
-    width: 20px; height: 20px;
+    width: 940px; height: 940px;
+    margin: 0 0 -150px -150px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(59, 130, 246, 0.1) 35%, transparent 65%);
 }
 
 /* Global */
@@ -125,7 +91,7 @@
     border-radius: 50%;
     background: rgba(148, 163, 184, 0.3);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 [data-variant="a"] .va-dot::after {
     content: attr(data-label);
@@ -199,7 +165,7 @@
     padding: 8px 14px;
     color: var(--text-main);
     border-radius: 6px;
-    transition: all 0.25s;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
     position: relative;
 }
 [data-variant="a"] .va-nav-links a::before {
@@ -286,7 +252,7 @@
 [data-variant="a"] .va-hero h1.va-h1 {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 [data-variant="a"] .va-hero h1.va-h1.pre {
     opacity: 0;
@@ -308,7 +274,7 @@
     margin-bottom: 24px;
     line-height: 1.6;
     opacity: 1;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.5s ease;
 }
 [data-variant="a"] .va-hero-name {
     font-family: var(--mono);
@@ -316,7 +282,7 @@
     color: var(--text-dim);
     margin-bottom: 48px;
     opacity: 1;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.5s ease;
     letter-spacing: 0.05em;
 }
 [data-variant="a"] .va-hero-name span { color: var(--primary); }
@@ -328,7 +294,7 @@
 [data-variant="a"] .va-cta-group {
     display: flex; gap: 16px; flex-wrap: wrap;
     opacity: 1;
-    transition: opacity 0.8s ease 0.2s;
+    transition: opacity 0.5s ease 0.1s;
 }
 
 [data-variant="a"] .va-btn {
@@ -340,7 +306,7 @@
     border-radius: 8px;
     border: 1px solid transparent;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: transform 0.15s ease-out, box-shadow 0.2s, border-color 0.2s, background-color 0.2s;
     position: relative;
     overflow: hidden;
     text-transform: none;
@@ -380,16 +346,14 @@
 [data-variant="a"] .va-hero-side {
     display: flex; flex-direction: column; gap: 14px;
     opacity: 1;
-    transition: opacity 1s ease 0.4s;
+    transition: opacity 0.5s ease 0.15s;
 }
 [data-variant="a"] .va-stat-card {
     padding: 22px 24px;
     background: var(--glass);
     border: 1px solid var(--border);
     border-radius: 14px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.4s;
+    transition: transform 0.2s ease-out, border-color 0.2s, background-color 0.2s;
     position: relative;
     overflow: hidden;
 }
@@ -525,7 +489,7 @@
     background: var(--bg-dark);
     display: flex; flex-direction: column; align-items: center;
     gap: 8px;
-    transition: all 0.3s;
+    transition: background-color 0.2s;
     cursor: default;
     position: relative;
 }
@@ -539,7 +503,7 @@
     background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
                 var(--primary-glow) 0%, transparent 60%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
     pointer-events: none;
 }
 [data-variant="a"] .va-stack-item:hover::before { opacity: 1; }
@@ -573,9 +537,7 @@
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-style: preserve-3d;
-    will-change: transform;
+    transition: transform 0.15s ease-out, border-color 0.25s, background-color 0.25s;
 }
 [data-variant="a"] .va-proj-featured {
     grid-column: span 12;
@@ -608,12 +570,10 @@
 [data-variant="a"] .va-proj-media img {
     width: 100%; height: 100%;
     object-fit: cover;
-    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: saturate(0.9);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 [data-variant="a"] .va-proj:hover .va-proj-media img {
-    transform: scale(1.06);
-    filter: saturate(1.05);
+    transform: scale(1.04);
 }
 [data-variant="a"] .va-proj-media::after {
     content: '';
@@ -630,8 +590,7 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-bright);
-    background: rgba(3, 7, 18, 0.7);
-    backdrop-filter: blur(8px);
+    background: rgba(3, 7, 18, 0.78);
     border: 1px solid var(--border);
     padding: 6px 12px;
     border-radius: 100px;
@@ -714,7 +673,7 @@
     padding: 8px 14px;
     border: 1px solid var(--border-strong);
     border-radius: 6px;
-    transition: all 0.25s;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
 }
 [data-variant="a"] .va-proj-link:hover {
     border-color: var(--primary);
@@ -738,7 +697,7 @@
     color: var(--text-bright);
     border: 1px solid var(--border-strong);
     border-radius: 100px;
-    transition: all 0.25s;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
 }
 [data-variant="a"] .va-proj-jump a:hover {
     border-color: var(--primary);
@@ -854,7 +813,7 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     display: flex; flex-direction: column; gap: 10px;
-    transition: all 0.4s;
+    transition: transform 0.2s ease-out, border-color 0.2s, background-color 0.2s;
     position: relative;
     overflow: hidden;
 }
@@ -866,7 +825,7 @@
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.4s;
+    transition: transform 0.25s;
 }
 [data-variant="a"] .va-hobby:hover::before { transform: scaleX(1); }
 [data-variant="a"] .va-hobby:hover {
@@ -995,9 +954,6 @@
     [data-variant="a"] .va-nav-links { display: none; }
     [data-variant="a"] .va-status { display: none; }
     [data-variant="a"] .va-section { padding: 90px 0; }
-    [data-variant="a"] .va-cursor,
-    [data-variant="a"] .va-cursor-ring { display: none; }
-    [data-variant="a"] * { cursor: auto !important; }
     [data-variant="a"] .va-orb-1,
     [data-variant="a"] .va-orb-2 { display: none; }
 }
@@ -1005,12 +961,4 @@
     [data-variant="a"] .va-orb-1,
     [data-variant="a"] .va-orb-2 { display: none; }
     [data-variant="a"] * { animation: none !important; transition: none !important; }
-}
-
-/* Hide default cursor on desktop when custom is active */
-@media (hover: hover) and (pointer: fine) {
-    [data-variant="a"][data-cursor="on"],
-    [data-variant="a"][data-cursor="on"] * {
-        cursor: none !important;
-    }
 }

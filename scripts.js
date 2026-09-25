@@ -1,7 +1,7 @@
 // ============================================
 //  HAHN — Neon Grid (variant A)
-//  Optimised: rAF-batched mouse effects, paused
-//  canvas, robust iOS counter.
+//  Optimised: rAF-batched mouse effects, half-res
+//  canvas paused below the fold, robust iOS counter.
 // ============================================
 
 (function () {
@@ -9,7 +9,6 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const stage = document.getElementById('stage');
   if (!stage) return;
-  stage.setAttribute('data-cursor', isCoarse ? 'off' : 'on');
 
   // ===== Hero reveal =====
   const hero = document.querySelector('.va-hero');
@@ -30,66 +29,38 @@
   // ===== Coalesced global mouse handler =====
   // Single source of truth for cursor X/Y — every dependent effect reads
   // from it inside one rAF tick instead of registering its own listener.
-  const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2, active: false };
+  // (No custom cursor: a JS-driven one always trails the native pointer.)
+  const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
   const orb1 = document.querySelector('.va-orb-1');
   const orb2 = document.querySelector('.va-orb-2');
-  const cur = document.getElementById('va-cursor');
-  const ring = document.getElementById('va-cursor-ring');
-
-  let rx = mouse.x, ry = mouse.y;
   let pending = false;
-  let ringAnim = null;
 
   function applyMouse() {
     pending = false;
-    const w = window.innerWidth, h = window.innerHeight;
-    const nx = (mouse.x / w - 0.5) * 2;
-    const ny = (mouse.y / h - 0.5) * 2;
+    const nx = (mouse.x / window.innerWidth - 0.5) * 2;
+    const ny = (mouse.y / window.innerHeight - 0.5) * 2;
     if (orb1) orb1.style.transform = `translate3d(${nx * 40}px, ${ny * 40}px, 0)`;
     if (orb2) orb2.style.transform = `translate3d(${-nx * 30}px, ${-ny * 30}px, 0)`;
-    if (cur) cur.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0) translate(-50%, -50%)`;
-    if (ring && !ringAnim) ringAnim = requestAnimationFrame(ringLoop);
-  }
-  function ringLoop() {
-    rx += (mouse.x - rx) * 0.18;
-    ry += (mouse.y - ry) * 0.18;
-    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
-    if (Math.abs(mouse.x - rx) > 0.4 || Math.abs(mouse.y - ry) > 0.4) {
-      ringAnim = requestAnimationFrame(ringLoop);
-    } else {
-      ringAnim = null;
-    }
   }
 
   if (!isCoarse) {
     window.addEventListener('mousemove', e => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
-      mouse.active = true;
       if (!pending) {
         pending = true;
         requestAnimationFrame(applyMouse);
       }
     }, { passive: true });
-
-    if (cur && ring) {
-      const hoverSel = 'a, button, .va-proj, .va-stack-item, .va-hobby';
-      document.querySelectorAll(hoverSel).forEach(el => {
-        el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-        el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
-      });
-      window.addEventListener('mousedown', () => ring.classList.add('click'));
-      window.addEventListener('mouseup', () => ring.classList.remove('click'));
-    }
   }
 
-  // ===== Canvas blobs (desktop only, paused offscreen) =====
+  // ===== Canvas blobs (desktop only, paused below the first screen) =====
   const canvas = document.getElementById('va-canvas');
   if (canvas && !isCoarse && !reducedMotion) {
     const ctx = canvas.getContext('2d');
-    // Gradients are inherently blurry — high DPR doubles the cost for
-    // no perceptible quality gain. Pin to 1.
-    const DPR = 1;
+    // Gradients are inherently blurry: render at half resolution and let CSS
+    // upscale — a quarter of the pixels with no perceptible quality loss.
+    const DPR = 0.5;
     let W = 0, H = 0;
     function resize() {
       W = canvas.width = window.innerWidth * DPR;
@@ -100,15 +71,16 @@
     resize();
     window.addEventListener('resize', resize);
 
+    // Sizes and speeds are in CSS px; scaled once to canvas px.
     const blobs = [
       { x: W * 0.3, y: H * 0.3, r: 280, vx: 0.6, vy: 0.4, c: '96,165,250', phase: 0 },
       { x: W * 0.7, y: H * 0.4, r: 340, vx: -0.5, vy: 0.7, c: '167,139,250', phase: 2 },
       { x: W * 0.5, y: H * 0.7, r: 300, vx: 0.4, vy: -0.5, c: '139,92,246', phase: 4 },
       { x: W * 0.2, y: H * 0.8, r: 260, vx: 0.7, vy: -0.3, c: '59,130,246', phase: 1 }
-    ];
+    ].map(b => ({ ...b, r: b.r * DPR, vx: b.vx * DPR, vy: b.vy * DPR }));
     let smoothX = W / 2, smoothY = H / 2;
     let t = 0, animId = null;
-    let heroVisible = true, docVisible = true;
+    let topVisible = true, docVisible = true;
 
     function draw() {
       smoothX += (mouse.x * DPR - smoothX) * 0.06;
@@ -117,15 +89,15 @@
       ctx.globalCompositeOperation = 'lighter';
       for (let i = 0; i < blobs.length; i++) {
         const b = blobs[i];
-        b.x += b.vx + Math.sin(t * 0.5 + b.phase) * 0.3;
-        b.y += b.vy + Math.cos(t * 0.4 + b.phase) * 0.3;
+        b.x += b.vx + Math.sin(t * 0.5 + b.phase) * 0.3 * DPR;
+        b.y += b.vy + Math.cos(t * 0.4 + b.phase) * 0.3 * DPR;
         b.x += (smoothX - b.x) * 0.002;
         b.y += (smoothY - b.y) * 0.002;
         if (b.x < -b.r) b.x = W + b.r;
         else if (b.x > W + b.r) b.x = -b.r;
         if (b.y < -b.r) b.y = H + b.r;
         else if (b.y > H + b.r) b.y = -b.r;
-        const pulseR = b.r + Math.sin(t + b.phase) * 40;
+        const pulseR = b.r + Math.sin(t + b.phase) * 40 * DPR;
         const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, pulseR);
         g.addColorStop(0, `rgba(${b.c},0.32)`);
         g.addColorStop(0.5, `rgba(${b.c},0.07)`);
@@ -139,7 +111,7 @@
       t += 0.01;
       animId = requestAnimationFrame(draw);
     }
-    function start() { if (!animId && heroVisible && docVisible) animId = requestAnimationFrame(draw); }
+    function start() { if (!animId && topVisible && docVisible) animId = requestAnimationFrame(draw); }
     function stop() { if (animId) { cancelAnimationFrame(animId); animId = null; } }
     start();
 
@@ -147,12 +119,14 @@
       docVisible = !document.hidden;
       if (docVisible) start(); else stop();
     });
-    if (hero && 'IntersectionObserver' in window) {
-      new IntersectionObserver(es => {
-        heroVisible = es[0].isIntersecting;
-        if (heroVisible) start(); else stop();
-      }, { threshold: 0 }).observe(hero);
-    }
+    // Animate only while the first screen is in view. A scroll check instead of
+    // observing .va-hero, so pages without a hero (projects.html) pause too.
+    window.addEventListener('scroll', () => {
+      const v = window.scrollY < window.innerHeight;
+      if (v === topVisible) return;
+      topVisible = v;
+      if (v) start(); else stop();
+    }, { passive: true });
   } else if (canvas) {
     canvas.style.display = 'none';
   }
