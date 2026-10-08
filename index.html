@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holman Hernandez | FullStack Developer</title>
-    <meta name="description" content="Portfolio de Holman Hernandez, FullStack Developer en Bogotá con más de 10 años de experiencia en backend, mobile, cloud e inteligencia artificial.">
+    <title>Holman Hernandez · Ingeniero de software</title>
+    <meta name="description" content="Holman Hernandez, ingeniero de software en Bogotá: 10 años en backend, apps móviles, cloud e IA aplicada. Conocimientos, forma de trabajar, proyectos y trayectoria.">
     <meta name="author" content="Holman Hernandez">
     <link rel="canonical" href="https://site.hahndev.com/">
     <meta name="theme-color" content="#030712">
@@ -12,11 +12,16 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_CO">
     <meta property="og:url" content="https://site.hahndev.com/">
-    <meta property="og:title" content="Holman Hernandez | FullStack Developer">
-    <meta property="og:description" content="Sistemas robustos, escalables y seguros. Backend, mobile, cloud e IA en producción.">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Holman Hernandez | FullStack Developer">
-    <meta name="twitter:description" content="Sistemas robustos, escalables y seguros. Backend, mobile, cloud e IA en producción.">
+    <meta property="og:title" content="Holman Hernandez · Ingeniero de software">
+    <meta property="og:description" content="Ingeniero de software en Bogotá. Backend, mobile, cloud e IA aplicada, de la arquitectura a producción.">
+    <meta property="og:image" content="https://site.hahndev.com/images/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Holman Hernandez, ingeniero de software: backend, mobile, cloud e IA aplicada">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Holman Hernandez · Ingeniero de software">
+    <meta name="twitter:description" content="Ingeniero de software en Bogotá. Backend, mobile, cloud e IA aplicada, de la arquitectura a producción.">
+    <meta name="twitter:image" content="https://site.hahndev.com/images/og.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap" onload="this.rel='stylesheet'">
@@ -45,33 +50,37 @@
     <div class="va-orb-1"></div>
     <div class="va-orb-2"></div>
 
-    <!-- Side dots nav -->
-    <div class="va-dots">
-        <div class="va-dot active" data-target="inicio" data-label="Inicio"></div>
-        <div class="va-dot" data-target="stack" data-label="Stack"></div>
-        <div class="va-dot" data-target="proyectos" data-label="Proyectos"></div>
-        <div class="va-dot" data-target="experiencia" data-label="Experiencia"></div>
-        <div class="va-dot" data-target="intereses" data-label="Intereses"></div>
-        <div class="va-dot" data-target="contacto" data-label="Contacto"></div>
-    </div>
-
-    <nav class="va-nav">
+    <nav class="va-nav" aria-label="Principal">
         <div class="va-container">
-            <a href="#" class="va-logo">
-                <span class="va-logo-mark">H</span>
-                HAHN<span>.DEV</span>
+            <a href="#" class="va-logo" aria-label="HAHN.DEV, inicio">
+                <span class="va-logo-mark" aria-hidden="true">H</span>
+                <span class="va-logo-text">HAHN<span>.DEV</span></span>
             </a>
-            <div class="va-nav-links">
+            <div class="va-nav-links" id="va-nav-links">
+                <a href="#a-metodo">Cómo trabajo</a>
                 <a href="#a-proyectos">Proyectos</a>
-                <a href="#a-experiencia">Experiencia</a>
-                <a href="#a-intereses">Intereses</a>
+                <a href="#a-experiencia">Trayectoria</a>
                 <a href="#a-contacto">Contacto</a>
             </div>
             <div class="va-status">
                 <span class="va-status-dot"></span>
-                Disponible · 2026
+                Bogotá · Remoto
             </div>
+            <button type="button" class="va-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="va-nav-links">
+                <svg class="va-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                <svg class="va-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
         </div>
+    </nav>
+
+    <!-- Side dots nav -->
+    <nav class="va-dots" aria-label="Secciones">
+        <button type="button" class="va-dot active" data-target="inicio" data-label="Inicio" aria-label="Ir a inicio"></button>
+        <button type="button" class="va-dot" data-target="conocimientos" data-label="Conocimientos" aria-label="Ir a conocimientos"></button>
+        <button type="button" class="va-dot" data-target="metodo" data-label="Cómo trabajo" aria-label="Ir a cómo trabajo"></button>
+        <button type="button" class="va-dot" data-target="proyectos" data-label="Proyectos" aria-label="Ir a proyectos"></button>
+        <button type="button" class="va-dot" data-target="experiencia" data-label="Trayectoria" aria-label="Ir a trayectoria"></button>
+        <button type="button" class="va-dot" data-target="contacto" data-label="Contacto" aria-label="Ir a contacto"></button>
     </nav>
 
     <main class="va-main">
@@ -79,17 +88,14 @@
             <div class="va-container">
                 <div class="va-hero-grid">
                     <div class="va-hero-content">
-                        <div class="va-eyebrow">FullStack Developer · Colombia</div>
-                        <h1 class="va-h1">
-                            Construyo <span class="va-grad">soluciones</span><br>
-                            <span class="va-grad">digitales</span> de alto impacto.
-                        </h1>
-                        <p class="va-hero-sub">Sistemas robustos, escalables y seguros. Integro inteligencia artificial y tecnologías cloud para llevar las ideas más allá del código.</p>
-                        <div class="va-hero-name">› Holman Alexander Hernandez N. <span>// Bogotá, CO</span></div>
+                        <div class="va-eyebrow">Ingeniero de software · Bogotá, Colombia</div>
+                        <h1 class="va-h1">Holman Hernandez</h1>
+                        <p class="va-hero-role">Backend, mobile e IA aplicada, <span class="va-grad">de la arquitectura a producción.</span></p>
+                        <p class="va-hero-sub">Diez años diseñando APIs, apps nativas e híbridas e infraestructura en la nube. Hoy trabajo en sistemas distribuidos a escala regional y uso la IA en el desarrollo con reglas claras: código mantenible, verificable y seguro.</p>
                         <div class="va-cta-group">
                             <a href="#a-proyectos" class="va-btn va-btn-primary" data-magnetic>
                                 Ver mi trabajo
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
                             <a href="#a-contacto" class="va-btn va-btn-ghost" data-magnetic>Contáctame</a>
                         </div>
@@ -102,17 +108,19 @@
                             <div class="va-stat-desc">Backend, mobile, cloud e IA en producción</div>
                         </div>
                         <div class="va-stat-card">
-                            <div class="va-stat-label">Proyectos entregados</div>
-                            <div class="va-stat-value"><span data-count="100">100</span><small>+</small></div>
-                            <div class="va-stat-desc">Web, móvil, sistemas cloud, etc..</div>
+                            <a href="projects.html" style="text-decoration:none; color:inherit; display:block;">
+                                <div class="va-stat-label">Proyectos publicados</div>
+                                <div class="va-stat-value"><span data-count="12">12</span></div>
+                                <div class="va-stat-desc">Apps, juegos y herramientas que puedes probar ahora →</div>
+                            </a>
                         </div>
-                    <div class="va-stat-card">
-                        <a href="https://www.linkedin.com/in/holman-alexander-hernandez-nieto/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
-                            <div class="va-stat-label">LinkedIn · Perfil completo</div>
-                            <div class="va-stat-value" style="font-size: 22px;">Ver trayectoria ↗</div>
-                            <div class="va-stat-desc">10+ años en backend, mobile, cloud e IA</div>
-                        </a>
-                    </div>
+                        <div class="va-stat-card">
+                            <a href="https://www.linkedin.com/in/holman-alexander-hernandez-nieto/" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;">
+                                <div class="va-stat-label">LinkedIn · Perfil completo</div>
+                                <div class="va-stat-value" style="font-size: 22px;">Ver trayectoria ↗</div>
+                                <div class="va-stat-desc">Empresas y roles en detalle</div>
+                            </a>
+                        </div>
                     </aside>
                 </div>
             </div>
@@ -122,36 +130,82 @@
             </div>
         </section>
 
-        <!-- Stack -->
-        <section class="va-section va-stack-section" data-section="stack">
+        <!-- Conocimientos -->
+        <section id="a-conocimientos" class="va-section va-stack-section" data-section="conocimientos">
             <div class="va-container">
                 <div class="va-section-head">
                     <div>
-                        <div class="va-section-num">01 — Toolkit</div>
-                        <h2 class="va-section-title">Stack técnico</h2>
+                        <div class="va-section-num">01 — Conocimientos</div>
+                        <h2 class="va-section-title">Lo que sé hacer</h2>
                     </div>
-                    <div class="va-section-note">Herramientas que uso a diario para construir producto end-to-end.</div>
+                    <div class="va-section-note">Áreas en las que he trabajado en producción y que sigo practicando en mis proyectos.</div>
                 </div>
-                <div class="va-stack">
-                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">Python</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">JavaScript</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">TypeScript</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">Java</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Lang</div><div class="va-stack-name">Go</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Mobile</div><div class="va-stack-name">Kotlin</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Mobile</div><div class="va-stack-name">Swift</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Framework</div><div class="va-stack-name">React</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Framework</div><div class="va-stack-name">Node.js</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Framework</div><div class="va-stack-name">Django</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Cloud</div><div class="va-stack-name">AWS</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Cloud</div><div class="va-stack-name">GCP</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">Cloud</div><div class="va-stack-name">Azure</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">RAG</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">MCP</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">Fine-Tuning</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">Claude</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">Codex</div></div>
-                    <div class="va-stack-item"><div class="va-stack-tag">AI/ML</div><div class="va-stack-name">Copilot</div></div>
+                <div class="va-skills">
+                    <article class="va-skill">
+                        <h3>Backend y APIs</h3>
+                        <p>Diseño de APIs y de módulos de sistemas centrales: modelado de datos, integraciones y servicios que consumen otros equipos y aplicaciones.</p>
+                        <div class="va-proj-tags"><span>Python</span><span>Django</span><span>Java</span><span>Spring</span><span>Node.js</span><span>Go</span></div>
+                    </article>
+                    <article class="va-skill">
+                        <h3>Mobile</h3>
+                        <p>Apps nativas iOS, híbridas y multiplataforma, y liderazgo técnico de un equipo de desarrollo móvil.</p>
+                        <div class="va-proj-tags"><span>Swift</span><span>Kotlin</span><span>React Native</span><span>Ionic</span><span>Angular</span></div>
+                    </article>
+                    <article class="va-skill">
+                        <h3>Frontend y web</h3>
+                        <p>Interfaces web y SPAs, sin librerías cuando no hacen falta, con el procesamiento en el navegador para que los datos no salgan del dispositivo.</p>
+                        <div class="va-proj-tags"><span>React</span><span>TypeScript</span><span>JavaScript</span><span>Tailwind</span></div>
+                    </article>
+                    <article class="va-skill">
+                        <h3>Cloud y entrega continua</h3>
+                        <p>Infraestructura en la nube y pipelines de CI/CD para desplegar seguido, con builds reproducibles y poco riesgo.</p>
+                        <div class="va-proj-tags"><span>AWS</span><span>GCP</span><span>Azure</span><span>CI/CD</span><span>Git</span></div>
+                    </article>
+                    <article class="va-skill">
+                        <h3>IA aplicada</h3>
+                        <p>Modelos de clasificación que automatizan decisiones de negocio, RAG, fine-tuning y servidores MCP que conectan modelos con herramientas reales.</p>
+                        <div class="va-proj-tags"><span>LLMs</span><span>RAG</span><span>MCP</span><span>Fine-tuning</span></div>
+                    </article>
+                    <article class="va-skill">
+                        <h3>Gráficos 3D y juegos</h3>
+                        <p>Juegos jugables en el navegador con WebGL: escenas 3D, partículas, físicas sencillas y controles de teclado, mando y táctil.</p>
+                        <div class="va-proj-tags"><span>Babylon.js</span><span>WebGL</span><span>Canvas</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo trabajo -->
+        <section id="a-metodo" class="va-section" data-section="metodo">
+            <div class="va-container">
+                <div class="va-section-head">
+                    <div>
+                        <div class="va-section-num">02 — Método</div>
+                        <h2 class="va-section-title">Cómo trabajo</h2>
+                    </div>
+                    <div class="va-section-note">Principios que aplico en cada proyecto, también en los personales.</div>
+                </div>
+                <div class="va-method">
+                    <div class="va-method-item">
+                        <div class="va-method-num">/ 01</div>
+                        <h3>IA con guardarraíles</h3>
+                        <p>Trabajo con agentes de código a diario, pero con reglas. Centralicé las reglas de desarrollo de todos mis proyectos (dependencias, tests, seguridad, git) en un servidor MCP propio que los agentes consultan antes de actuar, y unos hooks bloquean los comandos que las incumplen y proponen el correcto.</p>
+                    </div>
+                    <div class="va-method-item">
+                        <div class="va-method-num">/ 02</div>
+                        <h3>Builds reproducibles</h3>
+                        <p>Lo que se despliega se genera siempre desde el código fuente, nunca se edita a mano: minificado y con un hash de contenido en el nombre, para que el navegador no sirva nunca una versión vieja.</p>
+                    </div>
+                    <div class="va-method-item">
+                        <div class="va-method-num">/ 03</div>
+                        <h3>Un cambio, un commit</h3>
+                        <p>Commits pequeños, con mensajes que explican el porqué y el diff revisado antes de confirmar. Cada repositorio se replica en dos remotos: GitHub y un servidor Git propio.</p>
+                    </div>
+                    <div class="va-method-item">
+                        <div class="va-method-num">/ 04</div>
+                        <h3>Privacidad por defecto</h3>
+                        <p>Si un dato no necesita salir del dispositivo, no sale. Mis herramientas de imágenes, favicons y CV procesan todo en el navegador, sin servidores ni subidas.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -161,10 +215,10 @@
             <div class="va-container">
                 <div class="va-section-head">
                     <div>
-                        <div class="va-section-num">02 — Selected Work</div>
+                        <div class="va-section-num">03 — Proyectos</div>
                         <h2 class="va-section-title">Proyectos destacados</h2>
                     </div>
-                    <div class="va-section-note">Productos reales en producción. Toca cualquier tarjeta para explorar.</div>
+                    <div class="va-section-note">Productos publicados que puedes probar ahora mismo.</div>
                 </div>
 
                 <div class="va-projects">
@@ -176,7 +230,7 @@
                         </div>
                         <div class="va-proj-body">
                             <div class="va-proj-meta">
-                                <span>Featured · 2024</span>
+                                <span>Destacado · 2024</span>
                                 <span>iOS / Android</span>
                             </div>
                             <h3>BoxApp — Entrenamiento de boxeo profesional</h3>
@@ -209,7 +263,6 @@
                             <div class="va-proj-tags"><span>Babylon.js</span><span>WebGL</span><span>JavaScript</span></div>
                             <div class="va-proj-links">
                                 <a href="https://towerdefender.hahndev.com" target="_blank" rel="noopener" class="va-proj-link">Jugar →</a>
-                                <a href="https://github.com/hahn92/towe-defender" target="_blank" rel="noopener" class="va-proj-link">Repo</a>
                             </div>
                         </div>
                     </article>
@@ -280,85 +333,72 @@
             <div class="va-container">
                 <div class="va-section-head">
                     <div>
-                        <div class="va-section-num">03 — Journey</div>
+                        <div class="va-section-num">04 — Trayectoria</div>
                         <h2 class="va-section-title">Trayectoria</h2>
                     </div>
-                    <div class="va-section-note">De la curiosidad por el código a sistemas en producción escalando con IA.</div>
+                    <div class="va-section-note">Diez años entre backend, mobile, cloud e IA. Las empresas, en mi LinkedIn.</div>
                 </div>
                 <div class="va-timeline">
                     <div class="va-tl-item">
                         <div class="va-tl-year">Mar 2026 — Hoy</div>
                         <div class="va-tl-title">Software Engineer</div>
-                        <div class="va-tl-place">// Marketplace LatAm · Remoto</div>
-                        <div class="va-tl-desc">Engineering a escala regional. Sistemas distribuidos, performance, y mejores prácticas en uno de los marketplaces más grandes de Latinoamérica.</div>
+                        <div class="va-tl-place">// Marketplace regional · Remoto</div>
+                        <div class="va-tl-desc">Sistemas distribuidos y rendimiento en uno de los marketplaces más grandes de Latinoamérica, con foco en buenas prácticas de ingeniería a escala.</div>
                     </div>
                     <div class="va-tl-item">
                         <div class="va-tl-year">Jul 2023 — Mar 2026</div>
                         <div class="va-tl-title">Líder Técnico</div>
-                        <div class="va-tl-place">// Mobile &amp; AI · Remoto</div>
-                        <div class="va-tl-desc">Dirigí el equipo de desarrollo móvil y la arquitectura técnica, optimizando procesos con CI/CD. Implementé estrategias de IA y modelos de clasificación para automatizar la toma de decisiones del negocio.</div>
+                        <div class="va-tl-place">// Mobile e IA · Remoto</div>
+                        <div class="va-tl-desc">Dirigí el equipo de desarrollo móvil y la arquitectura técnica. Optimicé la entrega con CI/CD e implementé modelos de clasificación que automatizan decisiones del negocio.</div>
                     </div>
                     <div class="va-tl-item">
                         <div class="va-tl-year">Jul 2022 — Jun 2023</div>
                         <div class="va-tl-title">Analista de Desarrollo</div>
-                        <div class="va-tl-place">// Backend &amp; Mobile</div>
-                        <div class="va-tl-desc">Desarrollador backend y de aplicaciones móviles. Diseño de APIs, integraciones y funcionalidades para apps en producción.</div>
+                        <div class="va-tl-place">// Backend y mobile</div>
+                        <div class="va-tl-desc">Diseño de APIs, integraciones y funcionalidades para apps móviles en producción.</div>
                     </div>
                     <div class="va-tl-item">
                         <div class="va-tl-year">May 2022 — Jun 2022</div>
                         <div class="va-tl-title">Senior Backend Developer</div>
                         <div class="va-tl-place">// Comercio social</div>
-                        <div class="va-tl-desc">Desarrollo backend con Python/Django para plataforma de comercio social en expansión regional.</div>
+                        <div class="va-tl-desc">Backend en Python/Django para una plataforma de comercio social en expansión regional.</div>
                     </div>
                     <div class="va-tl-item">
                         <div class="va-tl-year">Mar 2021 — Abr 2022</div>
                         <div class="va-tl-title">Backend Developer</div>
-                        <div class="va-tl-place">// Java/Spring · Híbridas</div>
-                        <div class="va-tl-desc">Módulos backend en Java/Spring y desarrollo de aplicaciones híbridas con Angular + Ionic Framework.</div>
+                        <div class="va-tl-place">// Java/Spring · Apps híbridas</div>
+                        <div class="va-tl-desc">Módulos backend en Java/Spring y aplicaciones híbridas con Angular e Ionic.</div>
                     </div>
                     <div class="va-tl-item">
                         <div class="va-tl-year">Sep 2017 — Feb 2021</div>
                         <div class="va-tl-title">Backend Developer</div>
                         <div class="va-tl-place">// Full stack · Cloud · iOS</div>
-                        <div class="va-tl-desc">Planeación de soluciones tecnológicas y configuración cloud en AWS. Módulos del sistema central en Python/Django y Java/Spring. Apps nativas iOS (Swift), híbridas Android (Angular + Ionic) e interfaces web (AngularJS, ReactJS).</div>
+                        <div class="va-tl-desc">Diseño de soluciones e infraestructura en AWS. Módulos del sistema central en Python/Django y Java/Spring, apps nativas iOS en Swift, híbridas Android con Angular e Ionic, e interfaces web con AngularJS y React.</div>
                     </div>
                     <div class="va-tl-item">
                         <div class="va-tl-year">Ene 2016 — Dic 2016</div>
                         <div class="va-tl-title">Desarrollador Web</div>
                         <div class="va-tl-place">// Freelance · Remoto</div>
-                        <div class="va-tl-desc">Primeros proyectos profesionales como autónomo. Desarrollo web a medida para clientes independientes.</div>
+                        <div class="va-tl-desc">Primeros proyectos profesionales: desarrollo web a medida para clientes independientes.</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Intereses -->
-        <section id="a-intereses" class="va-section" data-section="intereses">
+        <section id="a-intereses" class="va-interests" data-section="intereses">
             <div class="va-container">
-                <div class="va-section-head">
-                    <div>
-                        <div class="va-section-num">04 — Off-code</div>
-                        <h2 class="va-section-title">Más allá del código</h2>
-                    </div>
-                    <div class="va-section-note">Lo que alimenta mi curiosidad cuando el IDE está cerrado.</div>
-                </div>
-                <div class="va-hobbies">
-                    <div class="va-hobby"><div class="va-hobby-num">/ 01</div><div class="va-hobby-title">Boxeo</div><div class="va-hobby-desc">Disciplina y foco que se traducen directamente al código.</div></div>
-                    <div class="va-hobby"><div class="va-hobby-num">/ 02</div><div class="va-hobby-title">Fútbol</div><div class="va-hobby-desc">Lectura de patrones, decisiones rápidas, trabajo en equipo.</div></div>
-                    <div class="va-hobby"><div class="va-hobby-num">/ 03</div><div class="va-hobby-title">Videojuegos</div><div class="va-hobby-desc">Inspiración para UX, animación y mecánicas interactivas.</div></div>
-                    <div class="va-hobby"><div class="va-hobby-num">/ 04</div><div class="va-hobby-title">Libros</div><div class="va-hobby-desc">Técnicos, filosofía de producto, negocio y ciencia.</div></div>
-                    <div class="va-hobby"><div class="va-hobby-num">/ 05</div><div class="va-hobby-title">IA &amp; Tech</div><div class="va-hobby-desc">Experimentando con LLMs, RAG y agentes.</div></div>
-                    <div class="va-hobby"><div class="va-hobby-num">/ 06</div><div class="va-hobby-title">Investigación</div><div class="va-hobby-desc">Ciberseguridad, automatización, arquitectura de sistemas.</div></div>
-                </div>
+                <div class="va-interests-label">Fuera del código</div>
+                <p><strong>Boxeo, fútbol, videojuegos, libros, IA y ciberseguridad.</strong> El boxeo está detrás de BoxApp y de la web del club; los videojuegos, de los juegos de este portfolio.</p>
             </div>
         </section>
 
         <!-- Contacto -->
         <section id="a-contacto" class="va-contact" data-section="contacto">
             <div class="va-container">
-                <div class="va-contact-tag">05 — Let's talk</div>
+                <div class="va-contact-tag">05 — Contacto</div>
                 <h2>Hablemos de tu <span>próximo</span> proyecto.</h2>
-                <p class="va-contact-desc">¿Tienes un producto en mente o simplemente quieres saludar? Respondo en menos de 24 horas.</p>
+                <p class="va-contact-desc">¿Un producto en mente, una oportunidad o una duda técnica? Escríbeme y te respondo en menos de 24 horas.</p>
                 <div class="va-cta-group" style="justify-content: center;">
                     <a href="mailto:hahn92@hotmail.com" class="va-btn va-btn-primary" data-magnetic>
                         hahn92@hotmail.com
@@ -366,8 +406,8 @@
                     </a>
                 </div>
                 <div class="va-contact-links" style="margin-top: 40px;">
-                    <a href="https://github.com/hahn92" target="_blank" class="va-proj-link">GitHub ↗</a>
-                    <a href="https://www.linkedin.com/in/holman-alexander-hernandez-nieto/" target="_blank" class="va-proj-link">LinkedIn ↗</a>
+                    <a href="https://github.com/hahn92" target="_blank" rel="noopener" class="va-proj-link">GitHub ↗</a>
+                    <a href="https://www.linkedin.com/in/holman-alexander-hernandez-nieto/" target="_blank" rel="noopener" class="va-proj-link">LinkedIn ↗</a>
                 </div>
             </div>
         </section>
@@ -375,7 +415,11 @@
         <footer class="va-footer">
             <div class="va-container" style="display:flex; justify-content:space-between; width:100%; gap:20px; flex-wrap:wrap;">
                 <span>© 2026 · Holman Hernandez · Bogotá, CO</span>
-                <span>✦</span>
+                <div class="va-footer-links">
+                    <a href="mailto:hahn92@hotmail.com">Email</a>
+                    <a href="https://github.com/hahn92" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/holman-alexander-hernandez-nieto/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
             </div>
         </footer>
     </main>

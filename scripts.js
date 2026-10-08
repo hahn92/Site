@@ -155,14 +155,6 @@
       card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     });
 
-    document.querySelectorAll('.va-stack-item').forEach(el => {
-      el.addEventListener('mousemove', rafThrottle(function (e) {
-        const rect = el.getBoundingClientRect();
-        el.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
-        el.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
-      }), { passive: true });
-    });
-
     document.querySelectorAll('[data-magnetic]').forEach(el => {
       el.addEventListener('mousemove', rafThrottle(function (e) {
         const rect = el.getBoundingClientRect();
@@ -172,6 +164,20 @@
       }), { passive: true });
       el.addEventListener('mouseleave', () => { el.style.transform = ''; });
     });
+  }
+
+  // ===== Mobile menu =====
+  const nav = document.querySelector('.va-nav');
+  const menuBtn = document.querySelector('.va-menu-btn');
+  if (nav && menuBtn) {
+    const setOpen = open => {
+      nav.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    };
+    menuBtn.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+    nav.querySelectorAll('.va-nav-links a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
   }
 
   // ===== Side dots nav + scroll spy =====
